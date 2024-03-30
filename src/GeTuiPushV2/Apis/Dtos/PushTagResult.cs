@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GeTuiPushV2.Apis.Dtos
 {
-    public class PushTagResult : BaseResult
+    public class PushTagResult : BaseResult<PushTask>
     {
     }
 }
