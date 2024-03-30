@@ -117,6 +117,6 @@ namespace GeTuiPushV2.Apis
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         [HttpDelete("task/{taskId}")]
-        Task<BaseResult> DeleteTaskAsync([Required] string taskId, CancellationToken cancellationToken = default);
+        Task<BaseResult> StopTaskAsync([Required] string taskId, CancellationToken cancellationToken = default);
     }
 }

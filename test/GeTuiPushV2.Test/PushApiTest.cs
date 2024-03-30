@@ -149,9 +149,9 @@ namespace GeTuiPushV2.Test
         }
 
         [Fact]
-        public async Task DeleteTaskAsync()
+        public async Task StopTaskAsync()
         {
-            var result = await _pushApi.DeleteTaskAsync("RASL_0329_76593a2852934143938daa4b841a4a39");
+            var result = await _pushApi.StopTaskAsync("RASL_0329_76593a2852934143938daa4b841a4a39");
             Assert.Equal(0, result.Code);
         }
 

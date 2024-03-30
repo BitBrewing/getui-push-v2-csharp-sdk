@@ -14,9 +14,9 @@ namespace GeTuiPushV2.Test
         }
 
         [Fact]
-        public async Task RevokeTokenAsync()
+        public async Task DeleteTokenAsync()
         {
-            var result = await _authApi.RevokeTokenAsync("xxx");
+            var result = await _authApi.DeleteTokenAsync("xxx");
             Assert.Equal(10001, result.Code);
         }
     }

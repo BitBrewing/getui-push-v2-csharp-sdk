@@ -40,6 +40,6 @@ namespace GeTuiPushV2.Apis
         /// </remarks>
         /// <returns></returns>
         [HttpDelete("auth/{token}")]
-        Task<BaseResult> RevokeTokenAsync([Required]string token, CancellationToken cancellationToken = default);
+        Task<BaseResult> DeleteTokenAsync([Required]string token, CancellationToken cancellationToken = default);
     }
 }
