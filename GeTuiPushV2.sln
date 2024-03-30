@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB70CD63-4235-4695-9896-2B5D03FCE4E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E6EF462E-9284-4A28-9299-30350ADF5C15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{AEA12140-C286-4746-A2E2-67F6A3F72035}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeTuiPushV2", "src\GeTuiPushV2\GeTuiPushV2.csproj", "{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeTuiPushV2.Test", "test\GeTuiPushV2.Test\GeTuiPushV2.Test.csproj", "{12336E33-0EE3-45A4-834C-4B792423341D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12336E33-0EE3-45A4-834C-4B792423341D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12336E33-0EE3-45A4-834C-4B792423341D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12336E33-0EE3-45A4-834C-4B792423341D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12336E33-0EE3-45A4-834C-4B792423341D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{185931FF-E8CA-4B5C-A48D-C0030AC7B5BF} = {AB70CD63-4235-4695-9896-2B5D03FCE4E0}
+		{12336E33-0EE3-45A4-834C-4B792423341D} = {E6EF462E-9284-4A28-9299-30350ADF5C15}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14A08561-6FCD-401F-A39E-208CF037D7B4}
+	EndGlobalSection
+EndGlobal
