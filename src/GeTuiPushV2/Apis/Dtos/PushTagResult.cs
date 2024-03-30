@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GeTuiPushV2.Apis.Dtos
 {
-    public class PushFastCustomTagInput: PushSingleInputBase<PushAudienceFastCustomTag>
+    public class PushTagResult : BaseResult
     {
     }
 }

@@ -13,7 +13,7 @@ namespace GeTuiPushV2.Test
         }
 
         [Fact]
-        public async Task SingleAliasAsync()
+        public async Task PushSingleAliasAsync()
         {
             var input = new PushSingleAliasInput
             {
@@ -55,7 +55,8 @@ namespace GeTuiPushV2.Test
                 },
             };
       
-            var result = await _pushApi.PushSingleAliasAsync(input).EnsureThrowErrorAsync();
+            var result = await _pushApi.PushSingleAliasAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotNull(result.Data.Cid);
         }
 
@@ -76,7 +77,8 @@ namespace GeTuiPushV2.Test
                 },
             };
 
-            var result = await _pushApi.PushAllAsync(input).EnsureThrowErrorAsync();
+            var result = await _pushApi.PushAllAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotNull(result.Data.TaskId);
         }
 
@@ -121,7 +123,8 @@ namespace GeTuiPushV2.Test
                     },
                 },
             };
-            var result = await _pushApi.PushSingleBatchAliasAsync(input).EnsureThrowErrorAsync();
+            var result = await _pushApi.PushSingleBatchAliasAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotEmpty(result.Data);
         }
 
@@ -140,14 +143,16 @@ namespace GeTuiPushV2.Test
                     },
                 },
             };
-            var result = await _pushApi.PushListMessageAsync(input).EnsureThrowErrorAsync();
+            var result = await _pushApi.PushListMessageAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotNull(result.Data.TaskId);
         }
 
         [Fact]
         public async Task DeleteTaskAsync()
         {
-            await _pushApi.DeleteTaskAsync("RASL_0329_76593a2852934143938daa4b841a4a39").EnsureThrowErrorAsync();
+            var result = await _pushApi.DeleteTaskAsync("RASL_0329_76593a2852934143938daa4b841a4a39");
+            Assert.Equal(0, result.Code);
         }
 
         [Fact]
@@ -161,7 +166,8 @@ namespace GeTuiPushV2.Test
                     Alias = new string[] { "s363241620566021" },
                 },
             };
-            var result = await _pushApi.PushListAliasAsync(input).EnsureThrowErrorAsync();
+            var result = await _pushApi.PushListAliasAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotEmpty(result.Data);
         }
 
@@ -171,7 +177,7 @@ namespace GeTuiPushV2.Test
             var input = new PushFastCustomTagInput
             {
                 RequestId = Guid.NewGuid().ToString("N"),
-                Audience = new PushAudienceSingleFastCustomTag
+                Audience = new PushAudienceFastCustomTag
                 {
                     FastCustomTag = "role=staff",
                 },
@@ -186,7 +192,40 @@ namespace GeTuiPushV2.Test
                 },
             };
             var result = await _pushApi.PushFastCustomTagAsync(input);
+            Assert.Equal(0, result.Code);
             Assert.NotNull(result.Data.TaskId);
+        }
+
+        [Fact]
+        public async Task PushTagAsyncAsync()
+        {
+            var input = new PushTagInput
+            {
+                RequestId = Guid.NewGuid().ToString("N"),
+                Audience = new PushAudienceTag
+                {
+                    Tag = new PushAudienceTagItem[]
+                    {
+                        new()
+                        {
+                            Key = PushAudienceTagKeyEnums.CustomTag,
+                            Values = new string[]{ "role=staff" },
+                            OptType = PushAudienceOptTypeEnums.Or,
+                        },
+                    },
+                },
+                PushMessage = new PushMessage
+                {
+                    Notification = new PushNotification
+                    {
+                        Title = "标题2" + DateTime.Now,
+                        Body = "内容2" + DateTime.Now,
+                        ClickType = PushNotificationClickTypeEnums.StartApp,
+                    },
+                },
+            };
+            var result = await _pushApi.PushTagAsync(input);
+            Assert.Equal(0, result.Code);
         }
     }
 }

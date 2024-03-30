@@ -91,6 +91,16 @@ namespace GeTuiPushV2.Apis
         Task<PushFastCustomTagResult> PushFastCustomTagAsync([JsonNetContent] PushFastCustomTagInput input, CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// 根据条件筛选用户推送
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        /// <remarks>对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。</remarks>
+        [HttpPost("push/tag")]
+        Task<PushTagResult> PushTagAsync([JsonNetContent] PushTagInput input, CancellationToken cancellationToken = default);
+
+        /// <summary>
         /// 此接口用来创建消息体，并返回taskid，为批量推的前置步骤
         /// </summary>
         /// <param name="input"></param>

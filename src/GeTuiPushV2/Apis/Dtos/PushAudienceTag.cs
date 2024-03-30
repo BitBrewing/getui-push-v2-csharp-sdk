@@ -6,13 +6,15 @@ using System.Text;
 
 namespace GeTuiPushV2.Apis.Dtos
 {
-    public class PushAudienceSingleFastCustomTag
+    public class PushAudienceTag
     {
         /// <summary>
-        /// 使用用户标签筛选目标用户
+        /// 推送条件，数量不大于100个
         /// </summary>
         [Required]
-        [JsonProperty("fast_custom_tag")]
-        public string FastCustomTag { get; set; }
+        [JsonProperty("tag")]
+        [MinLength(1)]
+        [MaxLength(100)]
+        public IEnumerable<PushAudienceTagItem> Tag { get; set; }
     }
 }

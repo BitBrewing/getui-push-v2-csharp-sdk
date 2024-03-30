@@ -8,13 +8,14 @@
     <Authors>BitBrewing</Authors>
     <Company>Yiqifei</Company>
     <Description>个推消息推送SDK</Description>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <PackageProjectUrl>https://github.com/BitBrewing/getui-push-v2-csharp-sdk</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>getui;个推</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <IncludeSymbols>False</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
