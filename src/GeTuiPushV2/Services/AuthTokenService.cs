@@ -59,7 +59,7 @@ namespace GeTuiPushV2.Services
         {
             var timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
-            var input = new AuthCreateTokenInput
+            var input = new CreateTokenInput
             {
                 AppKey = _options.Value.AppKey,
                 Timestamp = timestamp,

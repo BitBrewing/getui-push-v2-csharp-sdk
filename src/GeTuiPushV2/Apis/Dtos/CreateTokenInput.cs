@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace GeTuiPushV2.Apis.Dtos
 {
-	public class AuthCreateTokenInput
+	public class CreateTokenInput
     {
         [Required]
         [JsonProperty("sign")]

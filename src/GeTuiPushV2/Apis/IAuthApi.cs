@@ -27,8 +27,9 @@ namespace GeTuiPushV2.Apis
         /// <param name="input"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        /// <remarks>注：鉴权接口每分钟最大调用量为100次，每天最大调用量为10万次，建议开发者妥善管理token，以免达到限制，影响推送</remarks>
         [HttpPost("auth")]
-        Task<AuthCreateTokenResult> CreateTokenAsync([JsonNetContent]AuthCreateTokenInput input, CancellationToken cancellationToken = default);
+        Task<CreateTokenResult> CreateTokenAsync([JsonNetContent]CreateTokenInput input, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 删除鉴权token

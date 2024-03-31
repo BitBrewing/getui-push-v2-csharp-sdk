@@ -129,9 +129,9 @@ namespace GeTuiPushV2.Test
         }
 
         [Fact]
-        public async Task PushListMessageAsync()
+        public async Task CreateListMessageAsync()
         {
-            var input = new PushListMessageInput
+            var input = new CreateListMessageInput
             {
                 PushMessage = new PushMessage
                 {
@@ -143,7 +143,7 @@ namespace GeTuiPushV2.Test
                     },
                 },
             };
-            var result = await _pushApi.PushListMessageAsync(input);
+            var result = await _pushApi.CreateListMessageAsync(input);
             Assert.Equal(0, result.Code);
             Assert.NotNull(result.Data.TaskId);
         }

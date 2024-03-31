@@ -108,7 +108,7 @@ namespace GeTuiPushV2.Apis
         /// <returns></returns>
         /// <remarks>注：此接口频次限制200万次/天，申请修改请点击右侧“技术咨询”了解详情。</remarks>
         [HttpPost("push/list/message")]
-        Task<PushListMessageResult> PushListMessageAsync([JsonNetContent] PushListMessageInput input, CancellationToken cancellationToken = default);
+        Task<CreateListMessageResult> CreateListMessageAsync([JsonNetContent] CreateListMessageInput input, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 对正处于推送状态，或者未接收的消息停止下发（只支持批量推和群推任务）

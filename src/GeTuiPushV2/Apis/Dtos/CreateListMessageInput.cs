@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GeTuiPushV2.Apis.Dtos
 {
-    public class PushListMessageInput
+    public class CreateListMessageInput
     {
         /// <summary>
         /// 任务组名（只允许填写数字、字母、横杠、下划线）
