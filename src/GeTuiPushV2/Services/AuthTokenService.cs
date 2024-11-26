@@ -43,7 +43,9 @@ namespace GeTuiPushV2.Services
                     if (token == null)
                     {
                         token = await GetAccessTokenCoreAsync();
-                        _memoryCache.Set(_tokenKey, token, TimeSpan.FromMilliseconds(token.ExpireTime - 30000));
+
+                        var expiration = DateTimeOffset.FromUnixTimeMilliseconds(token.ExpireTime).AddMinutes(-1);
+                        _memoryCache.Set(_tokenKey, token, expiration);
                     }
                 }
                 finally

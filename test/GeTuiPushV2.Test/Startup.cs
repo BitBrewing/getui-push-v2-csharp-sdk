@@ -22,9 +22,9 @@ namespace GeTuiPushV2.Test
             services
                 .AddGeTuiPush(x =>
                 {
-                    x.AppId = "SJ2IhFwIqN7ZZWZwEbgpD4";
-                    x.AppKey = "i7yI7CIXIj9BtnQ2nYl1YA";
-                    x.MasterSecret = "4QzTD7asqD8GwVtpuGG708";
+                    x.AppId = "AppId";
+                    x.AppKey = "AppKey";
+                    x.MasterSecret = "MasterSecret";
                 })
                 .AddLogger<OutputLogger>();
         }
